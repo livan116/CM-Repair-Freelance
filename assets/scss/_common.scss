@@ -1,0 +1,382 @@
+body {
+    color: #7d7d7d;
+	font-family: $font-secondery;
+	line-height: 1.6;
+	font-size: 16px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+body.loaded {
+	overflow-y: scroll;
+}
+::-webkit-selection {
+	color: $dark;
+	background-color: rgba($color-primary, .7);
+	text-shadow: none;
+}
+::-moz-selection {
+	color: $dark;
+	background-color: rgba($color-primary, .7);
+	text-shadow: none;
+}
+::selection {
+	color: $dark;
+	background-color: rgba($color-primary, .7);
+	text-shadow: none;
+}
+:focus {
+    outline: 0;
+}
+
+/*=== UTILITIES CLASSES ===*/
+.font-primary {font-family: $font-primary}
+.font-secondery {font-family: $font-secondery}
+.font-w-400 {font-weight: 400 !important}
+.font-w-600 {font-weight: 600 !important}
+.font-w-700 {font-weight: 700 !important}
+small, .small {font-size: 13px !important}
+.line-h-1-5 {line-height: 1.5}
+.line-h-1-6 {line-height: 1.6}
+.line-h-1-7 {line-height: 1.7}
+.line-h-1-8 {line-height: 1.8}
+.lead {
+	font-size: 18px !important;
+	line-height: 30px;
+	@include breakAt(md-device) {
+		font-size: 16px !important;
+	}
+}
+.bg-cover {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+// section heading style
+.section-heading {
+	margin-top: -9px;
+}
+
+// overlay style
+.overlay,
+.overlay-dark,
+.overlay-light {
+	position: relative;
+	z-index: 1;
+	&::after {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background-color: #000;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: .35;
+	}	
+}
+.overlay-dark {
+	&::after {
+		background-color: $color-blue;
+		opacity: .9;
+	}	
+}
+.overlay-light {
+	&::after {
+		background-color: $white;
+		opacity: .5;
+	}	
+}
+
+// button style
+.btn {
+	font-size: 16px;
+	font-weight: 600;
+    text-transform: uppercase;
+    padding: 17px 35px;
+    border-radius: 0;
+    border: 0;
+    position: relative;
+	z-index: 1;
+	overflow: hidden;
+	transition: .3s;
+	@include breakAt(md-device) {
+		padding: 14px 30px;
+	}
+	&.btn-sm {
+		font-size: 15px;
+		padding: 14px 30px;
+		@include breakAt(md-device) {
+			font-size: 14px;
+			padding: 14px 26px;
+		}
+	}
+	&:active,
+	&:focus {
+		box-shadow: none !important;
+	}
+	&::after {
+		position: absolute;
+		content: "";
+		height: 0;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+	&:hover::after {
+		height: 100%;
+		bottom: 100%;
+		transition: height .3s, bottom .7s;
+	}
+}
+.btn-primary {
+    color: #35382f;
+    background-color: $color-primary;
+	&:hover,
+	&:active,
+	&:focus {
+		color: #35382f;
+		background-color: $color-primary;
+	}
+	&::after {
+		background-color: $white;
+	}
+}
+.btn-light {
+    color: #35382f;
+    background-color: $white;
+	&:hover,
+	&:active,
+	&:focus {
+		color: #35382f;
+		background-color: $white;
+	}
+	&::after {
+		background-color: $color-primary;
+	}
+}
+.btn-primary-outline {
+    color: #35382f;
+	background-color: $white;
+	border: 1px solid $color-primary;
+    padding: 16px 35px;
+	&.btn-sm {
+		padding: 13px 30px;
+		@include breakAt(md-device) {
+			padding: 13px 26px;
+		}
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		color: #35382f;
+		background-color: $white;
+	}
+	&::after {
+		background-color: $color-primary;
+	}
+}
+
+// owl nav and dot butoon
+.owl-nav {
+	button {
+		height: 30px;
+		width: 30px;
+		line-height: 30px !important;
+		background: #babbb9 !important;
+		border-radius: 50%;
+		color: $white !important;
+		font-size: 12px!important;
+		transition: .3s;
+		position: absolute;
+		top: calc(50% - 30px);
+		&.disabled {
+			background: rgba($color-primary, .5) !important;
+			&:hover {
+				cursor: default;
+				background: rgba($color-primary, .5) !important;
+			}
+		}
+		&:hover {
+			background: $black-300 !important;
+		}
+	}
+	.owl-prev {
+		left: -15px !important;
+	}
+	.owl-next {
+		right: -15px !important;
+	}
+}
+.owl-dots {
+	margin-top: 25px;
+	text-align: center;
+	line-height: 0;
+	button.owl-dot {
+		width: 50px;
+		height: 12px;
+		border-radius: 15px;
+		background: $gray !important;
+		margin: 0 5px;
+		margin-top: 5px;
+		transition: .3s;
+		&.active {
+			background-color: $color-primary !important;
+		}
+	}
+}
+
+// helper classes
+.section {
+    padding-top: 100px;
+	padding-bottom: 100px;
+	@include breakAt(md-device) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	&.pt-80 {
+		padding-top: 80px !important;
+		@include breakAt(md-device) {
+			padding-top: 50px;
+		}
+	}
+	&.pt-60 {
+		padding-top: 60px !important;
+		@include breakAt(md-device) {
+			padding-top: 10px;
+		}
+	}
+}
+
+.cm-page-header {
+    padding-top: 150px;
+	padding-bottom: 150px;
+	@include breakAt(md-device) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	&.overlay-dark {
+		&::after {
+			background-color: $color-blue;
+			opacity: .45;
+		}	
+	}
+}
+
+// pagination style
+.pagination {
+	margin-top: 30px;
+	li {
+		margin: 0 5px;
+	}
+	a {
+		display: inline-block;
+		height: 35px;
+		width: 35px;
+		line-height: 33px;
+		border: 1px solid #dbdbdb;
+		color: #7d7d7d;
+		text-align: center;
+		&.active,
+		&:hover {
+			text-decoration: none;
+			color: $dark;
+			border-color: $color-primary;
+			background-color: $color-primary;
+		}
+	}
+}
+
+// check list
+.check-list {
+	list-style: none;
+	li {
+		position: relative;
+		margin-top: 15px;
+		&:first-child {
+			margin-bottom: 0;
+		}
+		&::before {
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f00c";
+			margin-right: 10px;
+			font-size: 80%;
+			color: $color-primary;
+		}
+	}
+}
+
+// count up/down number style
+.number-input {
+	border: 1px solid #dbdbdb;
+	display: inline-flex;
+	height: 48px;
+	align-items: center;
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        opacity: 1;
+    }
+    input[type="number"] {
+        appearance: textfield;
+        max-width: 60px;
+        border: 0;
+        font-size: 16px;
+        height: 40px;
+		font-weight: bold;
+		padding: 0 15px;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+    button {
+        outline:none;
+        -webkit-appearance: none;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+        border-radius: 50%;
+        background-color: transparent;
+		transition: .3s;
+		font-size: 12px;
+		display: block;
+		margin-right: 7px;
+    }
+}
+
+// color classes
+.text-primary {color: $color-primary !important}
+a.text-primary:focus, a.text-primary:hover {color: $color-primary !important; opacity: .7}
+.bg-primary {background-color: $color-primary !important}
+.text-dark {color: $dark !important}
+a.text-dark:hover, .text-dark a:hover {color: $color-primary !important}
+.bg-dark {background-color: $dark !important}
+.text-blue {color: $color-blue !important}
+.bg-blue {background-color: $color-blue !important}
+.text-gray {color: $gray !important}
+.bg-gray {background-color: $gray !important}
+.bg-light-gray {background-color: $light-gray !important}
+
+.bg-black {background-color: $black}
+.text-black {color: $black}
+.text-black-100 {color: $black-100}
+.bg-black-100 {background-color: $black-100}
+.bg-black-200 {background-color: $black-200}
+.text-black-200 {color: $black-200}
+.bg-black-300 {background-color: $black-300}
+.text-black-300 {color: $black-300}
+.text-black-400 {color: $black-400}
+.bg-black-400 {background-color: $black-400}
+.bg-black-500 {background-color: $black-500}
+.text-black-500 {color: $black-500}
+.text-black-600 {color: $black-600}
+.bg-black-600 {background-color: $black-600}
+.bg-black-700 {background-color: $black-700}
+.text-black-700 {color: $black-700}
+.text-black-800 {color: $black-800}
+.bg-black-800 {background-color: $black-800}
+.bg-black-900 {background-color: $black-900}
+.text-black-900 {color: $black-900}

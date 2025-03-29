@@ -1,0 +1,78 @@
+// how can help style
+.cm-how-can-help {
+    .block {
+        padding: 30px 25px;
+        background-color: $white;
+        border: 1px solid $color-primary;
+        position: relative;
+        z-index: 1;
+        .icon {
+            height: 70px;
+            width: 70px;
+            text-align: center;
+            line-height: 70px;
+            margin-bottom: 25px;
+            background-color: $color-primary;
+            transition: 0.3s;
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        &:hover {
+            .icon {
+                border-radius: 17px;
+                img {
+                    transition: .7s;
+                    transform: rotateY(-360deg);
+                }
+            }
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: $white;
+            transition: .2s;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &.active,
+        &:hover {
+            color: $white;
+            border-color: transparent;
+            &::after {
+                opacity: .7;
+                background-color: $color-blue;
+            }
+            .text-dark {
+                color: $white !important;
+            }
+        }
+    }
+    &.cm-how-can-help-2 {
+        .block {
+            transition: .3s;
+            .context img {
+                transition: .5s;
+            }
+            &::after {
+                display: none;
+            }
+            &:hover {
+                color: #7d7d7d;
+                border-color: transparent;
+                transform: translateY(-2px);
+                box-shadow: 5px 0 20px -5px #eee;
+                .text-dark {
+                    color: $dark !important;
+                }
+                .context img {
+                    transform: scale(.9) rotateY(360deg);
+                }
+            }
+        }
+    }
+}

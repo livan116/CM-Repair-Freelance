@@ -1,0 +1,111 @@
+// start banner style
+.cm-banner {
+    padding-top: 200px;
+    padding-bottom: 250px;
+    @include breakAt(xxl-device) {
+        padding-top: 150px;
+        padding-bottom: 200px;
+    }
+    .block {
+        h3 {
+            margin-top: -4px;
+        }
+        .display-3 {
+            @include breakAt(md-device) {
+                font-size: 56px;
+            }
+            @include breakAt(sm-device) {
+                font-size: 42px;
+            }
+        }
+        .lead {
+            @include breakAt(sm-device) {
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+.banner-carousel {
+    .overlay::after {
+        background-color: #000;
+        opacity: .6;
+    }
+    .cm-banner {
+        padding-top: 300px;
+        @include breakAt(xxl-device) {
+            padding-top: 250px;
+        }
+        @include breakAt(lg-device) {
+            padding-top: 210px;
+            padding-bottom: 150px;
+        }
+        @include breakAt(sm-device) {
+            padding-top: 180px;
+            padding-bottom: 150px;
+        }
+    }
+    .owl-nav button {
+        height: 50px;
+        width: 50px;
+        line-height: 50px!important;
+    }
+    .owl-nav .owl-prev {
+        left: 25px!important;
+    }
+    .owl-nav .owl-next {
+        right: 25px!important;
+    }
+    @include breakAt(lg-device) {
+        .owl-nav button {
+            height: 40px;
+            width: 40px;
+            line-height: 40px!important;
+            top: calc(100% - 65px);
+        }
+    }
+}
+
+.cm-banner-03 {
+    padding: 150px 0;
+    @include breakAt(md-device) {
+        padding: 100px 0;
+    }
+    .display-4 {
+        @include breakAt(md-device) {
+            font-size: 56px;
+        }
+        @include breakAt(sm-device) {
+            font-size: 38px;
+        }
+    }
+    &.overlay-dark::after {
+        opacity: .5;
+    }
+}
+
+.banner-form {
+    border: 1px solid $color-primary;
+    .form-control {
+        height: 45px;
+        &:focus {
+            border-color: $black-800;
+        }
+    }
+    textarea.form-control {
+        height: 90px;
+    }
+    .nice-select {
+        height: 45px;
+        line-height: 43px;
+        background-color: $light-gray;
+        &::after {
+            height: 6px;
+            right: 18px;
+            width: 6px;
+        }
+        .list {
+            width: 100%;
+        }
+    }
+}

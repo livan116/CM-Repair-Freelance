@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Mobile - Computer and Mobile Repair Store HTML Template</title>
+    <!-- all css files -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- all css files -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/plugins/OwlCarousel2-develop/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/jquery-nice-select-master/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/specing.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        /* Common Styles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1f2937;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        /* Categories Section */
+        .category-card {
+            height: 40vh;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover .category-overlay {
+            opacity: 1;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-badge {
+            background-color: #f5610c;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            /* color: #f5610c; */
+        }
+
+        .category-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1.5rem;
+            color: white;
+            z-index: 2;
+        }
+
+        /* Reviews Section */
+        #carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .review-card {
+            flex: 0 0 100%;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .review-card {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        .review-card.active .card {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            margin: 0 4px;
+            padding: 0;
+            background-color: #cbd5e0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background-color: #f5a7a7;
+        }
+
+        .view-all {
+            color: #f5a7a7;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .view-all:hover {
+            color: #f5610c;
+            text-decoration: underline;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<!-- start preloader -->
+<div class="preloader-wrapper">
+    <div class="preloader-inner">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+    </div>
+</div>
+<!-- end preloader -->
+
+<!-- START search-wrapper -->
+<div class="search-wrapper position-fixed d-flex align-items-center justify-content-center z-index-1">
+    <div class="search-close-wrap">
+        <p class="search-close-btn text-center rounded-circle" role="button"><span class="fas fa-times"></span></p>
+    </div>
+    <form action="#">
+        <div class="form-group d-flex m-0">
+            <input class="form-control shadow-none border-0 bg-transparent" type="search" placeholder="Type here">
+            <button type="submit" class="btn btn-primary p-0 border-0 text-white"><span class="fas fa-search"></span></button>
+        </div>
+    </form>
+</div>
+<!-- END search-wrapper -->
+ 
+  <!-- start header -->
+  <header class="cm-header">
+    <div class="header-top bg-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10">
+                    <div class="d-block d-md-flex justify-content-center justify-content-xl-start">
+                        <div class="block text-gray mr-25">
+                                <span class="icon text-primary fas fa-phone-alt mr-15"></span>
+                                <a href="tel:01224 969 296" class="text-gray">01224 969 296</a>|
+                                <a href="tel:07708770501" class="text-gray">07708770501</a>|
+                                <a href="tel:07473290399" class="text-gray">07473290399</a>
+                         </div>
+                        
+                        <div class="block text-gray mr-25">
+                            <span class="icon text-primary fas fa-envelope mr-15"></span>
+                            <a href="mailto:promobileaberdeen@gmail.com" class="text-gray">promobileaberdeen@gmail.com</a>
+                        </div>
+                        <div class="block text-gray">
+                            <span class="icon text-primary fas fa-home mr-15"></span>
+                            82 Union Street Aberdeen AB10 1JL 
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="col-xl-2 d-none d-xl-block">
+                    <div class="block d-flex justify-content-end">
+                        <a href="#!" class="text-primary"><span class="icon fab fa-facebook-f border-right-0"></span></a>
+                        <a href="#!" class="text-primary"><span class="icon fab fa-twitter border-right-0"></span></a>
+                        <a href="#!" class="text-primary"><span class="icon fab fa-linkedin-in"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header bg-dark">
+        <div class="container">
+            <div class="row align-content-center">
+                <div class="col-md-11">
+                    <nav class="navbar navbar-expand-lg navbar-light px-0">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/images/logo.png" class="w-md-25 w-100" alt="logo">
+                            <!-- logo -->
+                        </a>
+                        <button class="navbar-toggler border-0 p-0" type="button" data-toggle="collapse" data-target="#navLinks" aria-controls="navLinks" aria-expanded="false">
+                            <span class="navbar-toggler-icon "><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse " id="navLinks">
+                            <ul class="navbar-nav ml-auto align-items-center">
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link dropdown-toggle" href="index.html" role="button">Home</a>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services <span>+</span></a>
+                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="services.html">Service General</a></li>
+                                        <li><a class="dropdown-item" href="pcLaptop-repair.html">Service Laptop</a></li>
+                                        <li><a class="dropdown-item" href="mac-repair.html">Service Mac</a></li>
+                                        <li><a class="dropdown-item" href="pcDesktop-repair.html">Service Desktop</a></li>
+                                        <li><a class="dropdown-item" href="i-phone-repair.html">Service iPhone</a></li>
+                                        <li><a class="dropdown-item" href="i-pad-repair.html">Service iPad</a></li>
+                                        <li><a class="dropdown-item" href="smartphone-repair.html">Service SmartPhone</a></li>
+                                        <li><a class="dropdown-item" href="data-recovery.html">Service Data</a></li>
+                                        <li><a class="dropdown-item" href="software-repair.html">Service Software</a></li>
+                                        <li><a class="dropdown-item" href="console-repair.html">Service Console</a></li>
+                                        <li><a class="dropdown-item" href="buy-sell-repair.html">Service Buy & Sell</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <span>+</span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="blogs.html">Blogs</a></li>
+                                        <li><a class="dropdown-item" href="blog1.html">Blog1</a></li>
+                                        <li><a class="dropdown-item" href="blog2.html">Blog2</a></li>
+                                        <li><a class="dropdown-item" href="blog3.html">Blog3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages <span>+</span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="team.html">Team</a></li>
+                                        <li><a class="dropdown-item" href="services.html">Service Single</a></li>
+                                        <li><a class="dropdown-item" href="shop.html">Shop</a></li>
+                                        <li><a class="dropdown-item" href="shop-single.html">Shop Single</a></li>
+                                        <li><a class="dropdown-item" href="login.html">Login Page</a></li>
+                                        <li><a class="dropdown-item" href="sign-up.html">Sign Up Page</a></li>
+                                        <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+                                        <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                                        <li><a class="dropdown-item" href="404Page.html">404 Page</a></li>
+                                        <li><a class="dropdown-item" href="helpCenterPage.html">Help Center Page</a></li>
+                                        <li><a class="dropdown-item" href="thankyou.html">Thankyou Page</a></li>
+                                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                        <li><a class="dropdown-item" href="PrivacyPolicy.html">privacy policy</a></li>
+                                        <!-- <li><a class="dropdown-item" href="RefundPolicy.html">refund policy</a></li> -->
+                                        <li><a class="dropdown-item" href="TermsPage.html">Terms and Conditions</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" href="contact.html">Contact</a></a>
+                                </li>
+                                <div class="block d-flex mt-3 mt-lg-0 text-light">
+                                    <span class="icon fas fa-share-alt" role="button"></span>
+                                    <span class="icon fas fa-search search-toggle" role="button"></span>
+                                    <a class="icon pr-0 pt-0 pb-0 text-light" href="cart.html">
+                                        <span class="fas fa-shopping-bag"></span>
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end header -->
+<!-- start of page-haeder -->
+<div class="cm-page-header overlay-dark bg-cover" style="background-image: url(assets/images/banner2.png);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="block text-white text-center">
+                    <h2 class="h1">Services</h2>
+                    <div class="breadcrumb justify-content-center bg-transparent text-uppercase p-0 mb-0 mt-3">
+                        <a class="text-primary" href="#!">Home</a><span class="text-primary mx-2">></span>
+                        <span>Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of page-haeder -->
+
+    <!-- Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title mb-2">Top Categories</h2>
+                <p class="text-muted">Discover the best services we offer for relaxation and care.</p>
+            </div>
+
+            <div class="text-end mb-4">
+                <a href="#" class="view-all">View all →</a>
+            </div>
+
+            <div class="row g-4">
+                <!-- Category Card 1 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/laptop1.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Laptop</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Card 2 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/macbook.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Macbook</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Card 3 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/iphone.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Iphone</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Card 4 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/pc1.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Desktop</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Card 5 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/phone1.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Mobile</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Card 6 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="category-card shadow">
+                        <img src="assets/images/products/screen2.png" alt="Massage Therapy">
+                        <div class="category-overlay"></div>
+                        <div class="category-content">
+                            <span class="category-badge">150 Results</span>
+                            <h3 class="mt-2 fs-4 fw-bold">Screen</h3>
+                            <p class="mb-0"><i class="fas fa-comments"></i> 200 Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat for other categories -->
+            </div>
+        </div>
+    </section>
+
+<!-- start of testimonials -->
+<section class="section cm-testimonials bg-light-gray">
+    
+    <div class="container">
+    <div class="row align-items-center text-center">
+
+        
+            <div class="pr-0 pr-lg-5">
+                <h2 class="section-heading h1 text-dark"> Reviews</h2>
+                <!-- <p class="mt-25">Do commanded an shameless we disposing do. Indulgence ten remarkably nor are impression out.</p>
+                            <img class="img-fluid mt-40" src="assets/images/clients/05.png" alt="client-image"> -->
+            </div>
+        
+        
+    <div class="container py-0">
+        
+        <div class="testimonial-wrapper">
+            <div class="testimonial-container">
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        
+                        <div class="d-flex justify-content-end mb-3">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="d-block d-md-flex justify-content-between align-items-center">
+                            <div class="testimonial-client-info d-flex align-items-center">
+                                <img src="assets/images/clients/person1.png" alt="Client" class="testimonial-client-image me-3">
+                                <div class="testimonial-client-details">
+                                    <h5 class="mb-1">Miranda Austin</h5>
+                                    <p class="small text-primary text-uppercase fw-bold mb-0">Miranda Austin</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="testimonial-text mb-4 lead">Excellent service. My iPhone battery needed replacing. They arrived promptly, explained what needed to be done and replaced the battery in 15 minutes. They tested it and it works perfectly. They even followed up with a courtesy call the following day to ensure no other issues. Brilliant</p>
+                            <div class="testimonial-date mt-3 mt-md-0 d-flex justify-content-end">
+                                <span class="fas fa-calendar-alt text-primary me-1"></span>
+                                21-May-2022
+                            </div>
+                        
+                    </div>
+                </div>
+    
+                <div class="testimonial-slide">
+                    <!-- Same structure as first slide with different content -->
+                    <div class="testimonial-box">
+                        <div class="d-flex justify-content-end mb-3">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="d-block d-md-flex justify-content-between align-items-center">
+                            <div class="testimonial-client-info d-flex align-items-center">
+                                <img src="assets/images/clients/person2.png" alt="Client" class="testimonial-client-image me-3">
+                                <div class="testimonial-client-details">
+                                    <h5 class="mb-1">Miranda Austin</h5>
+                                    <p class="small text-primary text-uppercase fw-bold mb-0">Miranda Austin</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="testimonial-text mb-4 lead">Fantastic Service, Can't thank Mobile Repairs Pro and my engineer, Jerry enough. I broke my phone at work, called Mobile Repairs Pro, Jerry was at my office within 2 hours. He fixed my iPhone 7 before my meeting ended. I only paid once i fully checked my phone with Jerry. Would recommend again!</p>
+                            <div class="testimonial-date mt-3 mt-md-0 d-flex justify-content-end">
+                                <span class="fas fa-calendar-alt text-primary me-1"></span>
+                                21-May-2022
+                            </div>
+                    </div>
+                </div>
+    
+                <div class="testimonial-slide">
+                    <!-- Same structure as first slide with different content -->
+                    <div class="testimonial-box">
+                        <div class="d-flex justify-content-end mb-3">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="d-block d-md-flex justify-content-between align-items-center">
+                            <div class="testimonial-client-info d-flex align-items-center">
+                                <img src="assets/images/clients/person1.png" alt="Client" class="testimonial-client-image me-3">
+                                <div class="testimonial-client-details">
+                                    <h5 class="mb-1">Miranda Austin</h5>
+                                    <p class="small text-primary text-uppercase fw-bold mb-0">Miranda Austin</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="testimonial-text mb-4 lead">Dropped my phone in paint, went to a couple of repair shops (including Apple) but no one could fix it without a huge repair cost! Mobile Repairs Pro were excellent. Changed my speaker and even cleaned my screen to save me the cost of replacing it. I was so shocked to see such a professional team. My iPhone is working perfectly too. Highly recommend.</p>
+                            <div class="testimonial-date mt-3 mt-md-0 d-flex justify-content-end">
+                                <span class="fas fa-calendar-alt text-primary me-1"></span>
+                                21-May-2022
+                            </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Indicators -->
+            <div class="testimonial-indicators mx-3">
+                <button type="button" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    </div>
+</section>
+<!-- end of testimonials -->
+
+    <!-- start footer -->
+    <footer class="footer section bg-cover overlay-dark pt-60" >
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-xl-3 col-md-6 mt-40">
+                    <img class="mb-25" src="assets/images/logo-light.png" alt="">
+                    <p class="text-gray">Ye tacqs To say: Contact Us Now On All Social Media.
+                    </p>
+                    <ul class="social-links list-unstyled mt-25">
+                        <li><a href="#!"><span class="fab fa-facebook-f"></span></a></li>
+                        <li><a href="#!"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#!"><span class="fab fa-linkedin-in"></span></a></li>
+                        <li><a href="#!"><span class="fa-brands fa-youtube"></span></a></li>
+                        <li><a href="#!"><span class="fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#!"><span class="fa-brands fa-threads"></span></a></li>
+                        <li><a href="#!"><span class="fa-brands fa-whatsapp"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-md-6 mt-40">
+                    <h4 class="font-w-600 text-white mb-10">Quick Links</h4>
+                    <ul class="footer-links list-unstyled text-uppercase">
+                        <li><a href="#!">Web design</a></li>
+                        <li><a href="#!">Web development</a></li>
+                        <li><a href="#!">Graphics</a></li>
+                        <li><a href="#!">SEO</a></li>
+                        <li><a href="#!">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-md-6 mt-40">
+                    <h4 class="font-w-600 text-white mb-10">Quick Links</h4>
+                    <ul class="footer-links list-unstyled text-uppercase">
+                        <li><a href="#!">About Us</a></li>
+                        <li><a href="#!">Blog</a></li>
+                        <li><a href="#!">Contact Us</a></li>
+                        <li><a href="#!">Sign in</a></li>
+                        <li><a href="#!">My account</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-md-6 mt-40">
+                    <h4 class="font-w-600 text-white mb-10">Get in touch</h4>
+                    <div class="text-gray mt-20">
+                        <span class="icon text-primary fas fa-phone-alt mr-2"></span>
+                        <a href="tel:01224 969 296" class="text-gray">01224 969 296</a>|
+                        <a href="tel:07708770501" class="text-gray">07708770501</a>|
+                        <a href="tel:07473290399" class="text-gray">07473290399</a>
+                    </div>
+                    <div class="text-gray mt-20">
+                        <span class="icon text-primary fas fa-envelope mr-2"></span>
+                        <a href="mailto:promobileaberdeen@gmail.com" class="text-gray">promobileaberdeen@gmail.com</a>
+                    </div>
+                    <div class="text-gray mt-20">
+                        <span class="icon text-primary fas fa-home mr-2"></span>
+                        82 Union Street Aberdeen AB10 1JL
+                    </div>
+                    <form class="mt-25" action="#!" method="post">
+                        <div class="input-group input-group-primary">
+                            <input type="email" class="form-control text-white px-3 bg-transparent shadow-none border-0"
+                                placeholder="Mail address">
+                            <div class="input-group-apend">
+                                <button class="btn btn-primary rounded-circle" type="submit">
+                                    <span class="fas fa-chevron-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright © 2022. All Rights Reserved By CM-Repair</p>
+                    <p> Powered by WebConvert.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    
+    <a href="#top" class="scroll-to-top">
+        <span class="fas fa-chevron-up"></span>
+    </a>
+    <!-- scroll to top -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/OwlCarousel2-develop/dist/owl.carousel.min.js"></script>
+    <script src="assets/plugins/OwlCarousel2-develop/owlcarousel2-filter.min.js"></script>
+    <script src="assets/plugins/isotope/isotope.min.js"></script>
+    <script src="assets/plugins/waypoints-master/lib/jquery.waypoints.min.js"></script>
+    <script src="assets/plugins/jquery-nice-select-master/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/all.js"></script>
+    
+</body>
+</html>

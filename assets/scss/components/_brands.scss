@@ -1,0 +1,10 @@
+.cm-brands {
+    padding-top: 60px;
+    @include breakAt(md-device) {
+        padding-top: 30px;
+    }
+}
+
+.divider {
+    border-top: 1px solid #ddd;
+}

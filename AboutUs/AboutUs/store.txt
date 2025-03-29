@@ -1,0 +1,74 @@
+ <section class="w-100 bg-danger py-16 mt-5">
+      <div class="container mx-auto px-4 py-2">
+        <div class="logo-carousel">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <!-- Logo 1 -->
+              <div class="swiper-slide">
+                <img src="images/brands/brand1.png" alt="brand1" />
+              </div>
+
+              <!-- Logo 2 -->
+              <div class="swiper-slide">
+                <img src="images/brands/brand2.png" alt="brand1" />
+              </div>
+
+              <!-- Logo 3 -->
+              <div class="swiper-slide">
+                <img src="images/brands/brand3.png" alt="brand1" />
+              </div>
+
+              <!-- Logo 4 -->
+              <div class="swiper-slide">
+                <img src="images/brands/brand4.png" alt="brand1" />
+              </div>
+
+              <!-- Logo 5 -->
+              <div class="swiper-slide">
+                <img src="images/brands/brand5.png" alt="brand1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    -------------------------------
+
+    <section>
+      <div
+        class="d-flex flex-column flex-md-row position-relative"
+        style="height: 55vh;"
+      >
+        <!-- Background Image -->
+        <img
+          src="images/massage2.jpg"
+          class="position-absolute w-100 h-100 object-fit-cover z-0"
+          alt=""
+        />
+
+        <!-- Content Section -->
+        <div
+          class="col-12 col-md-6 d-flex flex-column align-items-center text-center p-4 position-relative z-1"
+          style="width: 60vw;">
+          <div class="display-5 text-white mb-4 font2">Our Story</div>
+          <p class="text-white lead mb-4 font2">
+            Founded in 20XX, [Company Name] started with a simple mission: to
+            solve real problems for real people. Over the years, we have grown
+            into a trusted partner for businesses worldwide.
+          </p>
+        </div>
+
+        <!-- Video Section -->
+        <div
+          class="col-12 col-md-6 d-flex align-items-center justify-content-center p-3 position-relative z-1"
+          style="width: 40vw;"
+        >
+          <video class="w-100" autoplay controls>
+            <source src="images/spa-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>

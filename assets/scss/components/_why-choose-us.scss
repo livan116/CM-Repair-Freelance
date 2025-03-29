@@ -1,0 +1,76 @@
+// why-choose-us style
+.why-choose-us {
+    .block {
+        padding: 40px 30px;
+        transition: .3s;
+        box-shadow: 1px 0 10px rgba($black, .02);
+        &:hover {
+            box-shadow: 3px 0 20px rgba($black, .07);
+            transform: translateY(-3px);
+        }
+        .icon {
+            height: 60px;
+            width: 60px;
+            line-height: 60px;
+            text-align: center;
+            background-color: $color-primary;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.3s;
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+    .bg-shape-image {
+        padding: 70px 50px;
+        @include breakAt(sm-device) {
+            padding: 60px 30px;
+        }
+        @include breakAt(xs-device) {
+            padding: 60px 15px;
+        }
+        background-image: url(../images/why-choose-us/bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        .icon img {
+            height: auto;
+            margin: auto;
+            padding-top: 15px;
+        }
+        .block {
+            &:hover {
+                transform: translateY(0);
+                .icon {
+                    border-radius: 17px;
+                }
+            }
+        }
+        .owl-dots {
+            text-align: left;
+            margin-left: -3px;
+            button.owl-dot {
+                width: 12px;
+                height: 12px;
+                &.active {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+// first time
+.cm-first-time {
+    .block {
+        transition: 0.3s;
+        &.active,
+        &:hover {
+            background-color: #fff !important;
+            box-shadow: 0 0 15px #ddd;
+            transform: translateY(-2px);
+        }
+    }
+}

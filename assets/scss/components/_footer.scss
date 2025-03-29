@@ -1,0 +1,111 @@
+// start footer style
+
+.footer-links {
+    a {
+        position: relative;
+        color: $gray;
+        margin-top: 20px;
+        &:hover {
+            text-decoration: none;
+            color: $color-primary;
+        }
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            content: "\f054";
+            font-weight: 900;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+    }
+}
+
+.footer-bottom {
+    padding: 20px 10px;
+    background-color: $color-blue;
+    color: $white;
+}
+.social-links {
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #728199;
+            color: $color-primary;
+            border-radius: 50px;
+            &:hover {
+                background-color: $color-primary;
+                color: $white;
+                border-color: transparent;
+            }
+        }
+    }
+}
+.input-group-primary {
+    height: 45px;
+    border: 1px solid #7988a1;
+    border-radius: 50px;
+    max-width: 250px;
+    .form-control {
+        height: 44px;
+    }
+    .form-control::placeholder {
+        color: $white;
+        opacity: .7;
+    }
+    .btn {
+        color: $white !important;
+        padding: 0;
+        line-height: 39px;
+        height: 39px;
+        width: 39px;
+        font-size: 13px;
+        margin-top: 2px;
+        margin-right: 2px;
+    }
+}
+
+
+a.scroll-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    height: 40px;
+    width: 40px;
+    background:$color-primary;
+    line-height: 40px;
+    text-align: center;
+    color: $white;
+    border-radius: 50px;
+    transition: .3s;
+    z-index: 995;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    @include breakAt(md-device) {
+        right: 10px;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    &.show {
+        bottom: 40px;
+        opacity: 1;
+        visibility: visible;
+        &:hover {
+            transform: translateY(-4px);
+        }
+        @include breakAt(md-device) {
+            bottom: 10px;
+        }
+    }
+}
+// end footer style

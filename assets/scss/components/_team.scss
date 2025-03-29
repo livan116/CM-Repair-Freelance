@@ -1,0 +1,77 @@
+.cm-team {
+    @include breakAt(sm-device) {
+        padding-bottom: 110px;
+    }
+    .team-img {
+        @include breakAt(sm-device) {
+            width: 250px !important;
+        }
+    }
+    .owl-nav {
+        .owl-prev {
+            left: auto!important;
+            right: 45px!important;
+            top: -80px;
+            transform: translate(0);
+            @include breakAt(sm-device) {
+                top: auto;
+                bottom: -80px;
+                right: calc(50% + 10px) !important;
+            }
+        }
+        .owl-next {
+            right: 0px !important;
+            top: -80px;
+            transform: translate(0);
+            @include breakAt(sm-device) {
+                top: auto;
+                bottom: -80px;
+                right: calc(50% - 30px) !important;
+            }
+        }
+    }
+    .barWrapper {
+        margin-top: 25px;
+        .progress-text {
+            font-weight: 600;
+            color: $dark;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+    }
+    .progress {
+        overflow: visible;
+        height: 7px;
+        border-radius: 15px;
+        position: relative;
+        .progress-bar {
+            background: $color-primary;
+            border-radius: 15px;
+            overflow: visible;
+            position: relative;
+            opacity: 0;
+            transition: opacity .3s, width 1.5s ease-in-out;
+            .skill-percent { 
+                position: absolute;
+                color: $white;
+                right: 0;
+                height: 26px;
+                width: 30px;
+                line-height: 26px;
+                background-color: $dark;
+                border-radius: 4px;
+                bottom: 14px;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    border-left: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    border-right: 5px solid $dark;
+                    border-top: 5px solid $dark;
+                    bottom: -7px;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

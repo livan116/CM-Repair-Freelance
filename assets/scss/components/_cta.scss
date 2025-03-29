@@ -1,0 +1,19 @@
+// cta style
+.cm-cta {
+    &.overlay-light::after {
+        display: none;
+        @include breakAt(md-device) {
+            display: block;
+        }
+    }
+}
+
+.cm-cta-02 {
+    overflow: hidden;
+    position: relative;
+    @include breakAt(lg-device) {
+        .cta-img {
+            display: none;
+        }
+    }
+}

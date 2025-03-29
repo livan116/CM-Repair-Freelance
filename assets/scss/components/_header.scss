@@ -1,0 +1,240 @@
+// start header style
+@import 'dropdown';
+.cm-header {
+    position: relative;
+    .nav-link {
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 10px 15px !important;
+    }
+    .navbar-light .nav-link {
+        color: $dark !important;
+        &:hover {
+            opacity: .7;
+        }
+        @include breakAt(lg-device) {
+            text-align: center;
+        }
+    }
+    .nav-item.active .nav-link {
+        color: $color-primary !important;
+    }
+    .header-top {
+        @include breakAt(lg-device) {
+            padding: 7px 0;
+        }
+    }
+    .block {
+        .icon {
+            display: inline-block;
+            border: 1px solid #46597d;
+            border-top: 0;
+            border-bottom: 0;
+            padding: 15px 16px;
+            @include breakAt(lg-device) {
+                padding: 0;
+                border: 0 !important;
+                margin-right: 5px;
+                &:first-child {
+                    padding-left: 0 !important;
+                }
+            }
+        }
+        @include breakAt(lg-device) {
+            font-size: 15px;
+            text-align: center;
+            justify-content: center;
+            margin-left: 0 !important;
+            &.mr-35 {
+                margin-right: 25px;
+            }
+        }
+        @include breakAt(md-device) {
+            font-size: 13px;
+            &.mr-35 {
+                margin-right: 0;
+            }
+        }
+    }
+    .header {
+        padding: 12px 0;
+        box-shadow: 0 0 30px -15px $gray;
+        @include breakAt(lg-device) {
+            padding: 8px 0;
+            .navbar-brand img {
+                width: 160px;
+            }
+            .dropdown-item {
+                text-align: center;
+            }
+        }
+        @include breakAt(md-device) {
+            padding: 4px 0;
+        }
+        .block {
+            margin-left: 15px;
+            .icon {
+                padding: 5px 20px;
+                position: relative;
+                border: 0;
+                transition: .3s;
+                &:hover {
+                    color: $color-primary !important;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 1px;
+                    background-color: rgba($gray, .5);
+                    left: 0;
+                    top: 0;
+                }
+                &:first-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &.cm-header-2 {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 15;
+        .header {
+            box-shadow: none;
+            .navbar-light .nav-link {
+                color: $white !important;
+            }
+            @include breakAt(lg-device) {
+                .navbar-light .nav-link {
+                    color: $dark !important;
+                }
+                .navbar-collapse {
+                    background: #fff;
+                }
+            }
+            .nav-item.active .nav-link {
+                color: $color-primary !important;
+            }
+            .navbar-toggler {
+                span {
+                    font-size: 15px;
+                }
+                background-color: #fff;
+                border-radius: 0;
+                padding: 7px !important;
+            }
+            .block {
+                margin-left: 0;
+                @include breakAt(lg-device) {
+                    justify-content: center;
+                    margin-bottom: 20px;
+                }
+                .icon {
+                    padding: 5px;
+                    margin-right: 25px;
+                    color: $white !important;
+                    @include breakAt(lg-device) {
+                        color: $dark !important;
+                    }
+                    &:hover {
+                        color: $color-primary !important;
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.search-wrapper {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	visibility: hidden;
+    z-index: 9995;
+    transition: .3s;
+    transform: scale(1.1);
+    background: rgba($black, .8);
+	.form-control {
+		height: 60px;
+		width: 350px;
+        max-width: 100%;
+        padding-left: 30px;
+		&:focus {
+			border-color: $black-500;
+		}
+		@include breakAt(xs-device) {
+			width: 250px;
+		}
+    }
+    .form-group {
+        background: #fff;
+        border-radius: 50px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .3s;
+        opacity: 0;
+    }
+	button {
+		height: 60px;
+		width: 70px;
+		@include breakAt(xs-device) {
+			width: 55px;
+		}
+	}
+	.search-close-btn {
+		height: 45px;
+		width: 45px;
+		line-height: 45px;
+		margin: 0 auto;
+		margin-top: 50px;
+		background-color: $color-primary;
+        color: $white;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%, 0);
+        left: 50%;
+        transition: .3s;
+        opacity: 0;
+        &:hover {
+            opacity: .8;
+        }
+	}
+	.search-close-wrap {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+        z-index: -1;
+        cursor: zoom-out;
+	}
+}
+.showSearch {
+	opacity: 1;
+	visibility: visible;
+    transform: scale(1);
+	.search-close-btn {
+        bottom: 70px;
+        opacity: 1;
+        transition-delay: .2s;
+	}
+    .form-group {
+        top: 70px;
+        opacity: 1;
+        transition-delay: .2s;
+    }
+}
+// end header style

@@ -1,0 +1,108 @@
+// products style
+.product-filter-buttons,
+.product-filter-buttons-2 {
+    button {
+        border: 1px solid #bbbbbb;
+        color: $dark;
+        &:hover,
+        &.active {
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+        @include breakAt(lg-device) {
+            padding: 15px 25px;
+            font-size: 15px;
+        }
+        @include breakAt(md-device) {
+            border: 0;
+        }
+    }
+    @include breakAt(md-device) {
+        display: block;
+    }
+}
+.carousel-fluid {
+    width: 1310px;
+    margin: auto;
+    max-width: 100%;
+    padding: 0 20px;
+}
+.fluid-carousel {
+    .product-item {
+        .card-img-top {
+            border-color: rgba($color-primary, .2) !important;
+        }
+    }
+}
+
+.product-img-style {
+    border: 1px solid #dbdbdb;
+    position: relative;
+    &::after,
+    &::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 70%;
+        background-color: $white;
+        left: 15%;
+    }
+    &::after {
+        bottom: -1px;
+    }
+    &::before {
+        top: -1px;
+    }
+}
+
+.border-bottom-tab {
+    .nav-tabs {
+        border-bottom: 1px solid #dbdbdb;
+        padding-bottom: 10px;
+        .nav-item {
+            margin-bottom: 0;
+        }
+        .nav-link {
+            border: 0;
+            font-size: 18px;
+            font-weight: bold;
+            &.active {
+                color: $dark !important;
+            }
+        }
+    }
+}
+
+.product-item {
+    overflow: hidden;
+    border-radius: 0;
+    .card-img-top {
+        transition: .3s;
+    }
+    .show-on-hover {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: .3s;
+        .btn {
+            font-size: 12px;
+            padding: 13px 22px;
+        }
+    }
+    .card-body {
+        position: relative;
+    }
+    &:hover {
+        .card-img-top {
+            filter: saturate(0) blur(1px);
+            transform: scale(0.99);
+        }
+        .show-on-hover {
+            top: -60px;
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+// start blogs style
+.blog-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    .card-img-top {
+        transition: .3s;
+    }
+    &:hover {
+        .card-img-top {
+            filter: sepia(.4);
+        }
+    }
+    .blog-meta-overlap {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+        font-weight: 900;
+        color: $white;
+        background-color: $color-primary;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        padding-top: 8px;
+        line-height: 1;
+        span {
+            display: block;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.quote-info {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: url(../images/quote-bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0;
+        left: 0;
+        opacity: .3;
+    }
+}
+
+.quote-text {
+    line-height: 1.9;
+}
+// end blogs style

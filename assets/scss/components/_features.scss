@@ -1,0 +1,38 @@
+// features style
+.cm-features {
+    margin-top: -80px;
+    position: relative;
+    z-index: 3;
+    .block {
+        margin-top: 30px;
+        padding: 30px 35px;
+        box-shadow: 0 5px 25px -5px #eee;
+        background-color: $white;
+        @include breakAt(sm-device) {
+            padding: 30px 25px;
+            h4 {
+                font-size: 18px;
+            }
+        }
+        .icon {
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-right: 20px;
+            transition: 0.3s;
+            img {
+                width: 22px;
+            }
+        }
+        &:hover {
+            .icon {
+                border-radius: 17px;
+                img {
+                    transition: .7s;
+                    transform: rotateY(360deg);
+                }
+            }
+        }
+    }
+}

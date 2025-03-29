@@ -1,0 +1,58 @@
+// start service style
+.cm-services {
+    .nav-link {
+        border-bottom: 1px solid rgba($white, .3);
+        background-color: rgba($white, .1);
+        padding: 20px 35px;
+        color: $gray !important;
+        text-transform: uppercase;
+        font-weight: 600;
+        &:last-child {
+            border-bottom: 0;
+        }
+        &:hover,
+        &.active {
+            background-color: $color-primary;
+            color: $dark !important;
+        }
+    }
+    &.cm-services-02 {
+        .nav-link {
+            border-bottom: 1px solid rgba($dark, .1);
+            background-color: rgba($dark, .05);
+            padding: 20px 35px;
+            color: $dark !important;
+            text-transform: uppercase;
+            font-weight: 600;
+            &:last-child {
+                border-bottom: 0;
+            }
+            &:hover,
+            &.active {
+                background-color: $color-primary;
+                color: $dark !important;
+            }
+        }
+    }
+}
+
+.pricing-item {
+    h4 {
+        padding: 25px 10px;
+        background-color: gray;
+    }
+    .list-unstyled {
+        li {
+            padding: 12px 15px;
+            &:nth-child(odd) {
+                background-color: $light-gray;
+            }
+        }
+    }
+    .pricing-footer {
+        background-color: $light-gray;
+        padding: 30px 0;
+    }
+}
+
+// end service style
