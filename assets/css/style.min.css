@@ -2326,7 +2326,7 @@ a.text-dark:hover, .text-dark a:hover {
   background-color: gray;
 }
 .pricing-item .list-unstyled li {
-  padding: 12px 15px;
+  padding: 12px 12px;
 }
 .pricing-item .list-unstyled li:nth-child(odd) {
   background-color: #f3f3f5;
@@ -3041,6 +3041,7 @@ a.scroll-to-top.show:hover {
   gap: 10px;
   margin: 10px 0 0;
   padding: 0;
+  margin-bottom: 2px;
   list-style: none;
   position: relative;
   z-index: 2;
@@ -3076,8 +3077,8 @@ a.scroll-to-top.show:hover {
 }
 
 .testimonial-client-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -3334,4 +3335,8 @@ footer img{
 .bg-overlay .container {
   position: relative;
   z-index: 1; /* Keeps the content above the image */
+}
+
+.fa-chevron-right{
+  color: white;
 }
